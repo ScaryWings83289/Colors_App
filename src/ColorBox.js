@@ -4,18 +4,18 @@ import { Link } from "react-router-dom"
 import "./ColorBox.css";
 
 class ColorBox extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = { copied: false };
         this.changeCopyState = this.changeCopyState.bind(this);
     }
-    changeCopyState(){
+    changeCopyState() {
         this.setState({ copied: true }, () => {
             setTimeout(() => this.setState({ copied: false }), 1500);
-        })
+        });
     }
     render() {
-        const { name, background, moreUrl } = this.props;
+        const { name, background, moreUrl, showLink } = this.props;
         const { copied } = this.state;
         return (
             <CopyToClipboard text={background} onCopy={this.changeCopyState}>
@@ -26,7 +26,7 @@ class ColorBox extends Component {
                     />
                     <div className={`copy-msg ${copied && "show"}`}>
                         <h1>copied!</h1>
-                        <p>{this.props.background}</p>
+                        <p>{background}</p>
                     </div>
                     <div className="copy-container">
                         <div className="box-content">
@@ -34,9 +34,11 @@ class ColorBox extends Component {
                         </div>
                         <button className="copy-button">Copy</button>
                     </div>
-                    <Link to={moreUrl} onClick={e => e.stopPropagation()}>
-                        <span className="see-more">More</span>
-                    </Link>
+                    {showLink && (
+                        <Link to={moreUrl} onClick={e => e.stopPropagation()}>
+                            <span className="see-more">More</span>
+                        </Link>
+                    )}
                 </div>
             </CopyToClipboard>
         )
