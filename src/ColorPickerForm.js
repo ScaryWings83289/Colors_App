@@ -19,7 +19,7 @@ const styles = {
         width: "100%",
         height: "70px"
     }
-}
+};
 
 class ColorPickerForm extends Component {
     constructor(props){
@@ -64,10 +64,10 @@ class ColorPickerForm extends Component {
         return (
             <div>
                 <ChromePicker 
-                        color={currentColor} 
-                        onChangeComplete={this.updateCurrentColor}
-                        className={classes.picker}
-                    />
+                    color={currentColor} 
+                    onChangeComplete={this.updateCurrentColor}
+                    className={classes.picker}
+                />
                 <ValidatorForm onSubmit={this.handleSubmit} ref='form'>
                     <TextValidator
                         value={newColorName}

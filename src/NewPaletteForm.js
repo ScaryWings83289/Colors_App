@@ -18,29 +18,13 @@ const styles = theme => ({
     root: {
         display: 'flex',
     },
-    appBar: {
-        transition: theme.transitions.create(['margin', 'width'], {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),
-    },
-    appBarShift: {
-        width: `calc(100% - ${drawerWidth}px)`,
-        marginLeft: drawerWidth,
-        transition: theme.transitions.create(['margin', 'width'], {
-            easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen,
-        }),
-    },
-    menuButton: {
-        marginRight: theme.spacing(2),
-    },
     hide: {
         display: 'none',
     },
     drawer: {
         width: drawerWidth,
         flexShrink: 0,
+        height: "100vh"
     },
     drawerPaper: {
         width: drawerWidth,
@@ -50,7 +34,7 @@ const styles = theme => ({
     drawerHeader: {
         display: 'flex',
         alignItems: 'center',
-        padding: theme.spacing(0, 1),
+        padding: "0 8px",
         // necessary for content to be below app bar
         ...theme.mixins.toolbar,
         justifyContent: 'flex-end',
@@ -169,7 +153,7 @@ class NewPaletteForm extends Component {
                     anchor="left"
                     open={open}
                     classes={{
-                    paper: classes.drawerPaper,
+                        paper: classes.drawerPaper,
                     }}
                 >
                     <div className={classes.drawerHeader}>
@@ -208,7 +192,7 @@ class NewPaletteForm extends Component {
                 </Drawer>
                 <main
                     className={classNames(classes.content, {
-                    [classes.contentShift]: open,
+                        [classes.contentShift]: open,
                     })}
                 >
                     <div className={classes.drawerHeader} />
