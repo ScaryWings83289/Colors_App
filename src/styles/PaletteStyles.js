@@ -1,8 +1,8 @@
-import sizes from "./sizes"
+import sizes from "./sizes";
 
 export default {
     Palette: {
-        height: "97vh",
+        height: "100vh",
         display: "flex",
         flexDirection: "column"
     },
@@ -51,4 +51,4 @@ export default {
             height: "10%"
         }
     }
-}
+};

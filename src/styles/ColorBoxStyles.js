@@ -4,7 +4,7 @@ import sizes from "./sizes"
 export default {
     ColorBox: {
         width: "20%",
-        height: props => props.showingFullPalette ? "25%" : "50%",
+        height: props => (props.showingFullPalette ? "25%" : "50%"),
         margin: "0 auto",
         display: "inline-block",
         position: "relative",
@@ -28,7 +28,7 @@ export default {
     },
     copyText: {
         color: props => 
-            (chroma(props.background).luminance()) >= 0.7 ? "black" : "white"
+            chroma(props.background).luminance() >= 0.7 ? "black" : "white"
     },
     colorName : {
         color: props => 
@@ -46,7 +46,7 @@ export default {
         height: "30px",
         textAlign: "center",
         lineHeight: "30px",
-        textTransform: "uppercase",
+        textTransform: "uppercase"
     },
     copyButton : {
         color: props => 
@@ -86,7 +86,7 @@ export default {
         width: "100%",
         height: "100%",
         transition: "transform 0.6s ease-in-out",
-        transform: "scale(0.1)",
+        transform: "scale(0.1)"
     },
     showOverlay: {
         opacity: "1",
