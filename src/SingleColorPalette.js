@@ -12,7 +12,6 @@ class SingleColorPalette extends Component {
         this._shades = this.gatherShades(this.props.palette, this.props.colorId);
         this.state = { format: "hex" };
         this.changeFormat = this.changeFormat.bind(this);
-        console.log(this._shades);
     }
     gatherShades(palette, colorToFilterBy){
         let shades = [];
